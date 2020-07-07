@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff276fff</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="transport">#00000000</color>
+    <color name="colorStatusBlue">#ffc3d1eb</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="white">#ffffff</color>
+    <!--    一级文本-->
+    <color name="tc1">#303133</color>
+    <!--    二级文本-->
+    <color name="tc2">#ff606266</color>
+    <!--    三级文本-->
+    <color name="tc3">#ff909399</color>
+
+    <!--    标签颜色-->
+    <color name="org">#ffA127</color>
+    <!--    价格颜色-->
+    <color name="price">#FF3E3E</color>
+    <!--    主色-->
+    <color name="mainColor">#276fff</color>
+    <!--    主色-->
+    <color name="mainColor50">#80276fff</color>
+    <!--    标签颜色-->
+    <color name="tagBlue">#fff0f5ff</color>
+    <!--    提示文字-->
+    <color name="tcHint">#BFC2CC</color>
+    <!--    分割线，边框线，灰底按钮-->
+    <color name="border">#EDEFF2</color>
+    <!--    背景色-->
+    <color name="bgColor">#f5f7fa</color>
+
+    <color name="gradient_black_start">#ff13151d</color>
+    <color name="gradient_black_end">#ff3c3f54</color>
+
+    <color name="white_26">#42ffffff</color>
+
+    <color name="green">#23CC0C</color>
+
+    <color name="tc_green">#FF1F8529</color>
+
+    <color name="yellow">#FFDA00</color>
+
+    <color name="tc3_90">#90909399</color>
+    <color name="tc3_60">#60909399</color>
+</resources>
