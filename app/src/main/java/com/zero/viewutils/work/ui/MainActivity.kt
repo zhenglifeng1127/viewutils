@@ -1,25 +1,16 @@
 package com.zero.viewutils.work.ui
 
-import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.google.android.material.snackbar.Snackbar
 import com.zero.viewutils.R
+import com.zero.viewutils.base.BaseActivity
+import com.zero.viewutils.utils.extends.clickDelay
+import com.zero.viewutils.work.vm.NormalVM
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-    }
+class MainActivity : BaseActivity<NormalVM>(){
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -35,5 +26,28 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun viewModel(): Class<NormalVM> {
+        return NormalVM::class.java
+    }
+
+    override fun initArgs() {
+
+    }
+
+    override fun initData() {
+        fab.clickDelay { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+    }
+
+    override fun bindBody(): Any {
+        return mainBody
+    }
+
+    override fun bindView(): Int {
+        return R.layout.activity_main
     }
 }

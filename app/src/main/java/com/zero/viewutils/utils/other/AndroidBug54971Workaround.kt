@@ -15,7 +15,7 @@ private constructor(viewObserving: View, private var isTranslucent: Boolean) {
     init {
         mViewObserved.viewTreeObserver
             .addOnGlobalLayoutListener { resetLayoutByUsableHeight(computeUsableHeight()) }
-        frameLayoutParams = mViewObserved.getLayoutParams()
+        frameLayoutParams = mViewObserved.layoutParams
     }
 
     companion object{

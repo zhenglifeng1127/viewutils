@@ -1,4 +1,4 @@
-package com.example.kotlin.uitool
+package com.zero.viewutils.utils
 
 import android.annotation.TargetApi
 import android.app.Activity
@@ -14,6 +14,7 @@ import androidx.annotation.IntRange
 import androidx.annotation.NonNull
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.kotlin.uitool.AndroidBug54971Workaround
 import com.zero.viewutils.R
 
 /**

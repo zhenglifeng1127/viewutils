@@ -179,5 +179,12 @@ fun ArrayList<String>.getListString(split: String =","): String {
     return s
 }
 
+/**
+ * 保留两位小数
+ */
+fun Float?.number2f():String{
+    return this.toString().format("%.2f",this)
+}
+
 
 

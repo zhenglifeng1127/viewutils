@@ -158,7 +158,7 @@ abstract class BaseActivity<VM : BaseVM> : AppCompatActivity() {
     }
 
     private fun checkNet() {
-        if (getActiveNetworkInfo()) {
+        if (!getActiveNetworkInfo()) {
             service.showCallback(NetCallback::class.java)
         }else{
             service.showSuccess()
