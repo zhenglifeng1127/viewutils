@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.net.Proxy
 import java.util.concurrent.TimeUnit
 
-class WorkApi {
+class WorkRxApi {
 
     private val workApiService by lazy {
         val httpLoggingInterceptor = HttpLoggingInterceptor { message ->
@@ -39,7 +39,7 @@ class WorkApi {
         val retrofit = Retrofit.Builder()
             .baseUrl(Constants.BASE_URL_API)
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(client)
             .build()
         return@lazy retrofit.create(WorkApiService::class.java)

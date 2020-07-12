@@ -5,6 +5,7 @@ import com.zero.viewutils.entity.PageBean
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import org.json.JSONException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -42,12 +43,16 @@ abstract class PageObserver<T> : Observer<PageBean<T>> {
         when (result.status) {
 
             200 -> {
-                if(result.message.isNullOrEmpty()){
+                if (result.message.isNullOrEmpty()) {
                     result.message = "获取数据成功"
                 }
                 if (result.list.isNullOrEmpty()) {
                     val empty: MutableList<T> = ArrayList()
-                    onSuccess(empty,  result.message.toString(), result.count > result.pageNumber * result.pageSize)
+                    onSuccess(
+                        empty,
+                        result.message.toString(),
+                        result.count > result.pageNumber * result.pageSize
+                    )
                 } else
                     result.list?.let {
                         onSuccess(
@@ -84,18 +89,22 @@ abstract class PageObserver<T> : Observer<PageBean<T>> {
         //失败处理
         check()
         L.i("error msg", t.toString())
-        if (t is SocketTimeoutException || t is TimeoutException) {
-            //超时
-            onError("error on time", "连接超时，请稍候再试")
-        } else if (t is ConnectException) {
-            //连接失败
-            onError("error on connect", "连接失败，请稍候再试")
-        } else if (t is UnknownHostException) {
-            //地址有误
-            onError("error on host", "连接失败，请稍候再试")
-        } else {
-            //其他
-            onError("error on other", "连接失败，请稍候再试")
+        when (t) {
+            is SocketTimeoutException, is TimeoutException -> {
+                onError("error on time", "连接超时，请稍候再试")
+            }
+            is ConnectException ->{
+                onError("error on connect", "连接失败，请稍候再试")
+            }
+            is UnknownHostException ->{
+                onError("error on host", "连接失败，请稍候再试")
+            }
+            is JSONException->{
+                onError("error on JSON", "连接失败，请稍候再试")
+            }
+            else ->{
+                onError("error on other", "连接失败，请稍候再试")
+            }
         }
     }
 
@@ -105,7 +114,7 @@ abstract class PageObserver<T> : Observer<PageBean<T>> {
 
     open fun onError(code: String, msg: String) {
         L.i(code, msg)
-        //        ToastUtils.showCenterText(msg);
+
     }
 
     private fun onTokenFail() {

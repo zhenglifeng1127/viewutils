@@ -13,6 +13,8 @@ abstract class BaseVM : ViewModel(), LifecycleObserver {
 
     val disposable: CompositeDisposable by lazy { CompositeDisposable() }
 
+
+
     var extra: Bundle? = null
 
     val loading :MutableLiveData<Boolean> = MutableLiveData(false)

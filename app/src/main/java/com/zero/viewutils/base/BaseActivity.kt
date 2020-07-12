@@ -9,8 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.kotlin.uitool.StatusBarUtils
-import com.kingja.loadsir.callback.Callback
+import com.zero.viewutils.utils.StatusBarUtils
 import com.kingja.loadsir.core.LoadSir
 import com.zero.viewutils.R
 import com.zero.viewutils.ui.LoadingPopup
@@ -29,7 +28,7 @@ abstract class BaseActivity<VM : BaseVM> : AppCompatActivity() {
 
     private val service by lazy {
         LoadSir.getDefault().register(bindBody()) {
-            checkNet()
+            checkNet(true)
         }
     }
 
@@ -56,7 +55,7 @@ abstract class BaseActivity<VM : BaseVM> : AppCompatActivity() {
 
         initMap(savedInstanceState)
 
-        checkNet()
+        checkNet(false)
 
         initData()
 
@@ -157,10 +156,13 @@ abstract class BaseActivity<VM : BaseVM> : AppCompatActivity() {
         return super.dispatchTouchEvent(ev)
     }
 
-    private fun checkNet() {
+    private fun checkNet(isRefresh:Boolean) {
         if (!getActiveNetworkInfo()) {
             service.showCallback(NetCallback::class.java)
         }else{
+            if(isRefresh){
+                viewModel.onCreate()
+            }
             service.showSuccess()
         }
     }
