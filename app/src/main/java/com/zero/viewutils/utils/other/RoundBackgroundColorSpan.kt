@@ -37,7 +37,7 @@ class RoundBackgroundColorSpan : ReplacementSpan() {
         paint: Paint
     ) {
         val originalColor = paint.color
-        val px4 = BaseApplication.getCon().getDimen(R.dimen.dp_2)
+        val px4 = BaseApplication.getCon().getDimen(R.dimen.sw_2dp)
         val topNow = (top + BaseApplication.getCon().px2dp(3f)).toFloat()
         val rightNow = x + (paint.measureText(
             text,

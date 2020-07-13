@@ -28,7 +28,7 @@ class LoadTextView : AppCompatTextView {
 
     init {
         mProgressDrawable.setColorSchemeColors(textColors.defaultColor)
-        mProgressDrawable.setBounds(0, 0, context.getDimenPx(R.dimen.dp_14), context.getDimenPx(R.dimen.dp_14))
+        mProgressDrawable.setBounds(0, 0, context.getDimenPx(R.dimen.sw_14dp), context.getDimenPx(R.dimen.sw_14dp))
         setCompoundDrawables(mProgressDrawable, null, null, null)
         mProgressDrawable.strokeWidth = 4f
     }

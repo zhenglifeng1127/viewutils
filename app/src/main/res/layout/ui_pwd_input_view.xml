@@ -12,20 +12,20 @@
         android:cursorVisible="false"
         android:textColor="@color/white"
         android:background="@color/white"
-        android:layout_width="@dimen/dp_300"
-        android:layout_height="@dimen/dp_50"/>
+        android:layout_width="@dimen/sw_300dp"
+        android:layout_height="@dimen/sw_50dp"/>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/dp_300"
+        android:layout_width="@dimen/sw_300dp"
         android:layout_height="wrap_content">
         <TextView
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:gravity="center"
             android:id="@+id/itemOne"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sw_18sp"
             android:background="@drawable/layer_dp1_pwd_left"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"/>
+            android:layout_width="@dimen/sw_50dp"
+            android:layout_height="@dimen/sw_50dp"/>
 
         <TextView
             app:layout_constraintTop_toTopOf="parent"
@@ -33,30 +33,30 @@
             app:layout_constraintEnd_toStartOf="@id/itemThree"
             android:id="@+id/itemTwo"
             android:gravity="center"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sw_18sp"
             android:background="@drawable/layer_dp1_pwd_left"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"/>
+            android:layout_width="@dimen/sw_50dp"
+            android:layout_height="@dimen/sw_50dp"/>
         <TextView
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/itemTwo"
             app:layout_constraintEnd_toStartOf="@id/itemFour"
             android:id="@+id/itemThree"
             android:gravity="center"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sw_18sp"
             android:background="@drawable/layer_dp1_pwd_left"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"/>
+            android:layout_width="@dimen/sw_50dp"
+            android:layout_height="@dimen/sw_50dp"/>
         <TextView
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/itemThree"
             app:layout_constraintEnd_toStartOf="@id/itemFive"
             android:id="@+id/itemFour"
             android:gravity="center"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sw_18sp"
             android:background="@drawable/layer_dp1_pwd_left"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"/>
+            android:layout_width="@dimen/sw_50dp"
+            android:layout_height="@dimen/sw_50dp"/>
 
         <TextView
             app:layout_constraintTop_toTopOf="parent"
@@ -64,19 +64,19 @@
             app:layout_constraintEnd_toStartOf="@id/itemSix"
             android:id="@+id/itemFive"
             android:gravity="center"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sw_18sp"
             android:background="@drawable/layer_dp1_pwd_center"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"/>
+            android:layout_width="@dimen/sw_50dp"
+            android:layout_height="@dimen/sw_50dp"/>
         <TextView
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/itemSix"
             android:gravity="center"
-            android:textSize="@dimen/sp_18"
+            android:textSize="@dimen/sw_18sp"
             android:background="@drawable/layer_dp1_pwd_right"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"/>
+            android:layout_width="@dimen/sw_50dp"
+            android:layout_height="@dimen/sw_50dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

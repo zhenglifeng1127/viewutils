@@ -44,11 +44,11 @@ class CircleTopView : View {
             it.color = ContextCompat.getColor(context, R.color.colorPrimary)
             it.style = Paint.Style.FILL
             it.isAntiAlias = true
-            it.textSize = context.resources.getDimension(R.dimen.sp_12)
+            it.textSize = context.resources.getDimension(R.dimen.sw_12dp)
         }
-        radius = context.resources.getDimension(R.dimen.dp_8)
-        line = context.resources.getDimension(R.dimen.dp_12)
-        lineDp2 = context.resources.getDimension(R.dimen.dp_2)
+        radius = context.resources.getDimension(R.dimen.sw_8dp)
+        line = context.resources.getDimension(R.dimen.sw_12dp)
+        lineDp2 = context.resources.getDimension(R.dimen.sw_2dp)
     }
 
     override fun onDraw(canvas: Canvas) {

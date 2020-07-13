@@ -12,19 +12,19 @@
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_20"
-        android:layout_marginStart="@dimen/dp_20"
-        android:layout_marginEnd="@dimen/dp_20"
-        android:layout_marginBottom="22dp"
+        android:layout_marginTop="@dimen/sw_20dp"
+        android:layout_marginStart="@dimen/sw_20dp"
+        android:layout_marginEnd="@dimen/sw_20dp"
+        android:layout_marginBottom="@dimen/sw_22dp"
         android:text="" />
 
     <TextView
         android:id="@+id/tv_content"
         android:textColor="@color/_xpopup_content_color"
-        android:textSize="@dimen/sp_16"
+        android:textSize="@dimen/sw_16sp"
         android:gravity="center"
-        android:layout_marginStart="@dimen/dp_20"
-        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginStart="@dimen/sw_20dp"
+        android:layout_marginEnd="@dimen/sw_20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="" />

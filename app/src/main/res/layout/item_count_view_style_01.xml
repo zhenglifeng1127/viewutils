@@ -7,10 +7,10 @@
     <ImageView
         android:contentDescription="@string/app_name"
         android:id="@+id/countDown"
-        android:layout_marginEnd="@dimen/dp_1"
+        android:layout_marginEnd="@dimen/sw_1dp"
         android:background="@mipmap/ic_count_view_down"
-        android:layout_width="@dimen/dp_32"
-        android:layout_height="@dimen/dp_32"
+        android:layout_width="@dimen/sw_32dp"
+        android:layout_height="@dimen/sw_32dp"
        />
     <TextView
         android:focusable="false"
@@ -18,18 +18,18 @@
         android:id="@+id/countSize"
         android:gravity="center"
         android:text="@string/one"
-        android:minWidth="@dimen/dp_38"
+        android:minWidth="@dimen/sw_38dp"
         android:textColor="@color/tc1"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_32"
+        android:layout_height="@dimen/sw_32dp"
         android:background="@color/bgColor"
         />
     <ImageView
-        android:layout_marginStart="@dimen/dp_1"
+        android:layout_marginStart="@dimen/sw_1dp"
         android:contentDescription="@string/app_name"
         android:id="@+id/countUp"
         android:background="@mipmap/ic_count_view_up"
-        android:layout_width="@dimen/dp_32"
-        android:layout_height="@dimen/dp_32"
+        android:layout_width="@dimen/sw_32dp"
+        android:layout_height="@dimen/sw_32dp"
         />
 </LinearLayout>

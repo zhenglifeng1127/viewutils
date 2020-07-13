@@ -2,10 +2,10 @@
 <layer-list
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:right="@dimen/dp_m_2"
+        android:right="@dimen/_sw_2dp"
         >
     <shape>
-        <stroke android:color="#ffe9e9e9" android:width="@dimen/dp_1"/>
+        <stroke android:color="#ffe9e9e9" android:width="@dimen/sw_1dp"/>
 
     </shape>
     </item>

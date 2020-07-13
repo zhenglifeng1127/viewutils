@@ -6,6 +6,7 @@ import com.zero.viewutils.net.observer.NetResponse
 import com.zero.viewutils.net.observer.NetResponse.Companion.ERROR
 import com.zero.viewutils.net.observer.NetResponse.Companion.LOGIN_FAIL
 import com.zero.viewutils.net.observer.NetResponse.Companion.SUCCESS
+import kotlinx.coroutines.launch
 
 suspend fun <T> ViewModel.call(job: suspend () -> T): NetResponse<T> {
     return try {

@@ -37,10 +37,7 @@ class MainActivity : BaseActivity<NormalVM>(){
     }
 
     override fun initData() {
-        fab.clickDelay { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
     }
 
     override fun bindBody(): Any {

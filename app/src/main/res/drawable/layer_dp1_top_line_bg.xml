@@ -2,12 +2,12 @@
 <layer-list
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:bottom="@dimen/dp_m_2"
-        android:right="@dimen/dp_m_2"
-        android:left="@dimen/dp_m_2"
+        android:bottom="@dimen/_sw_2dp"
+        android:right="@dimen/_sw_2dp"
+        android:left="@dimen/_sw_2dp"
         >
     <shape>
-        <stroke android:color="#EDEFF2" android:width="@dimen/dp_0_5"/>
+        <stroke android:color="#EDEFF2" android:width="@dimen/sw_1dp"/>
     </shape>
     </item>
 </layer-list>

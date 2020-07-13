@@ -23,19 +23,19 @@ class NormalPageVM :BasePageVM<String,String>(){
      */
     override fun getPageList() {
         //接口调用
-        model.getList()
-            .subscribe(object :PageObserver<String>(disposable){
-                override fun onSuccess(t: MutableList<String>, msg: String, isLoad: Boolean) {
-                    setListData(t,isLoad)
-                }
-
-                override fun onError(code: String, msg: String) {
-                    super.onError(code, msg)
-                    toast(msg)
-                    loadError()
-                }
-
-            })
+//        model.getList()
+//            .subscribe(object :PageObserver<String>(disposable){
+//                override fun onSuccess(t: MutableList<String>, msg: String, isLoad: Boolean) {
+//                    setListData(t,isLoad)
+//                }
+//
+//                override fun onError(code: String, msg: String) {
+//                    super.onError(code, msg)
+//                    toast(msg)
+//                    loadError()
+//                }
+//
+//            })
     }
 
 

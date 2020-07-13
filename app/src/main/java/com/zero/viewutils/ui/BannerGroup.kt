@@ -44,11 +44,11 @@ class BannerGroup : FrameLayout {
     )
 
     init {
-        val dp5 = context.getDimenPx(R.dimen.dp_5)
-        val dp12 = context.getDimenPx(R.dimen.dp_12)
+        val dp5 = context.getDimenPx(R.dimen.sw_5dp)
+        val dp12 = context.getDimenPx(R.dimen.sw_12dp)
 
         pager.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-        val lp = LayoutParams(LayoutParams.WRAP_CONTENT,context.getDimenPx(R.dimen.dp_16),Gravity.END or Gravity.BOTTOM)
+        val lp = LayoutParams(LayoutParams.WRAP_CONTENT,context.getDimenPx(R.dimen.sw_16dp),Gravity.END or Gravity.BOTTOM)
         lp.marginEnd = dp12
         lp.bottomMargin = dp12
         tvCount.layoutParams = lp
