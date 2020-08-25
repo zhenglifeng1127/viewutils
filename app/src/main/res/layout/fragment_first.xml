@@ -7,13 +7,21 @@
     tools:context=".work.ui.FirstFragment">
 
     <Button
+        android:id="@+id/cityPicker"
         android:text="@string/cityPicker"
         android:layout_margin="@dimen/dp_40"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
+    <Button
+        android:id="@+id/image"
+        android:text="@string/image"
+        android:layout_margin="@dimen/dp_40"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cityPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/buttonFirst"
         android:layout_width="wrap_content"

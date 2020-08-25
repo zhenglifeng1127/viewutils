@@ -126,7 +126,7 @@ class Permission {
         }
 
         /**
-         * 读写
+         * 读写，Q该权限有变更
          */
         val STORAGE by lazy {
            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M&&Build.VERSION.SDK_INT <= Build.VERSION_CODES.P){

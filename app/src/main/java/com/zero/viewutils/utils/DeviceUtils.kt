@@ -110,13 +110,11 @@ class DeviceUtils {
          * @param req 请求码
          */
         fun openCamera(context: Activity, filePath: String, req: Int) {
-
             val imageUri = getFileUri(context, filePath) ?: return
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
             grantUriPermission(context, cameraIntent, imageUri)
             ActivityUtils.openForResult(cameraIntent, req)
-
         }
 
         /**

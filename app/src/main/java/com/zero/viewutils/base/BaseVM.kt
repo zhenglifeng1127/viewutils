@@ -10,13 +10,19 @@ import io.reactivex.disposables.CompositeDisposable
  */
 abstract class BaseVM : ViewModel(), LifecycleObserver {
 
-
+    /**
+     * 使用协程的可以不需要此项
+     */
     val disposable: CompositeDisposable by lazy { CompositeDisposable() }
 
-
-
+    /**
+     * 绑定从intent中传递过来的数据参数，bundle方式
+     */
     var extra: Bundle? = null
 
+    /**
+     * loading指示器开关，样式可以自定义
+     */
     val loading :MutableLiveData<Boolean> = MutableLiveData(false)
 
 

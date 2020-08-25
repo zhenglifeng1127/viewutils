@@ -6,11 +6,11 @@ class Constants {
 
     companion object {
 
-        val isDebug: Boolean by lazy { false }
+        val isDebug: Boolean by lazy { true }
 
         val BASE_URL_API: String by lazy { "" }//本地
 
-        val GALLERY_PATH by lazy {BaseApplication.getCon().getExternalFilesDir(Environment.DIRECTORY_PICTURES)}
+        val GALLERY_PATH by lazy {BaseApplication.getCon().getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.path+"/"}
 
         val spName: String by lazy { "SP_MODE" }
 

@@ -1,14 +1,16 @@
 package com.zero.viewutils.work.ui
 
+import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
-import com.google.android.material.snackbar.Snackbar
+import android.view.View
 import com.zero.viewutils.R
 import com.zero.viewutils.base.BaseActivity
-import com.zero.viewutils.utils.extends.clickDelay
+import com.zero.viewutils.base.L
+import com.zero.viewutils.utils.ToolbarUtils
 import com.zero.viewutils.work.vm.NormalVM
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.item_toolbar_normal.*
 
 class MainActivity : BaseActivity<NormalVM>(){
 
@@ -33,11 +35,15 @@ class MainActivity : BaseActivity<NormalVM>(){
     }
 
     override fun initArgs() {
-
+        L.i("start","-----------------------")
     }
 
     override fun initData() {
-
+        ToolbarUtils.Builder().apply {
+            toolbar = _toolbar
+            titleView = _toolbarTitle
+            titleText = "首页"
+        }.build()
     }
 
     override fun bindBody(): Any {
@@ -46,5 +52,15 @@ class MainActivity : BaseActivity<NormalVM>(){
 
     override fun bindView(): Int {
         return R.layout.activity_main
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when(requestCode){
+            666->{
+                L.i("this photo click back and get data")
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

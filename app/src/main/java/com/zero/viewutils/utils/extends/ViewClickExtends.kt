@@ -7,9 +7,12 @@ import com.amap.api.maps2d.model.LatLng
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.lxj.xpopup.interfaces.OnConfirmListener
 import com.zero.viewutils.R
+import com.zero.viewutils.base.Constants
 import com.zero.viewutils.utils.AppUtils
 import com.zero.viewutils.utils.DeviceUtils
 import com.zero.viewutils.utils.PopupUtils
+import com.zero.viewutils.utils.other.Permission
+import com.zero.viewutils.utils.singleton.AppManager
 import com.zero.viewutils.utils.singleton.RxUtils
 
 /**
@@ -156,6 +159,14 @@ fun <V : View> V.rxClick(p: Array<String>, block: (V) -> Unit) {
         }
     }
 }
+
+fun <V:View> V.openCamera(path:String,req :Int = 666){
+    rxClick(Permission.CAMERA){
+        DeviceUtils.openCamera(AppManager.endOfStack(),Constants.GALLERY_PATH+path,req)
+    }
+}
+
+
 
 /**
  * 根据坐标打开外部地图导航点击事件，支持高德，百度，网页等

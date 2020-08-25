@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sw_64dp"
+    android:gravity="center_vertical"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/_cityPickerLocation"
+        android:background="@drawable/shape_corners_dp2_edeff2"
+        android:textColor="@color/tc1"
+        android:textSize="@dimen/sp_14"
+        android:paddingStart="@dimen/sw_8dp"
+        android:paddingEnd="@dimen/sw_8dp"
+        android:gravity="center_vertical"
+        android:drawableStart="@mipmap/ic_location"
+        android:layout_width="@dimen/sw_84dp"
+        android:layout_height="@dimen/sw_36dp"
+        android:layout_marginStart="@dimen/sw_16dp"
+        android:layout_marginEnd="@dimen/sw_8dp" />
+
+</LinearLayout>

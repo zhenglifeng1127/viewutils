@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="1dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/_toolbar"
+            app:title=""
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_48dp"
+            android:minHeight="@dimen/sw_48dp"
+            android:background="@drawable/layer_dp1_bottom_line_white"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <!--按自己需求修改或者增加基础样式-->
+            <TextView
+                android:id="@+id/_toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:maxWidth="@dimen/sw_220dp"
+                android:singleLine="true"
+                android:textSize="@dimen/sw_18sp" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+</layout>

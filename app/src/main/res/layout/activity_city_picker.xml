@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".work.ui.MainActivity">
+    tools:context=".work.ui.citypicker.CityPickerActivity">
 
     <include layout="@layout/item_toolbar_normal"/>
 
-    <include layout="@layout/content_main" />
-
+    <include layout="@layout/content_city_picker" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

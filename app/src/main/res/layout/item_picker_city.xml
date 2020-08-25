@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/_cityPickerTitle"
+    android:orientation="vertical"
+    android:textColor="@color/tc1"
+    android:gravity="center_vertical"
+    android:textSize="@dimen/sp_14"
+    android:paddingStart="@dimen/sw_12dp"
+    android:paddingEnd="@dimen/sw_12dp"
+    android:background="@drawable/layer_dp1_bottom_line_white"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sw_44dp"/>

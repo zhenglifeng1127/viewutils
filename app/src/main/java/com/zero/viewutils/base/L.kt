@@ -10,7 +10,7 @@ class L {
     // 是否需要打印bug，可以在application的onCreate函数里面初始化
     companion object{
 
-        private const val TAG = "carShop"
+        private const val TAG = "utils"
 
         // 下面四个是默认tag的函数
         fun i(msg: String) {

@@ -1,7 +1,6 @@
 package com.zero.viewutils.work.vm
 
 import com.zero.viewutils.base.BasePageVM
-import com.zero.viewutils.net.observer.PageObserver
 import com.zero.viewutils.work.model.NormalModel
 
 /**
