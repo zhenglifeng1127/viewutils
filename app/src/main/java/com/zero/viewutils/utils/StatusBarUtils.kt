@@ -14,12 +14,13 @@ import androidx.annotation.IntRange
 import androidx.annotation.NonNull
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.kotlin.uitool.AndroidBug54971Workaround
 import com.zero.viewutils.R
+
 
 /**
  * 状态栏工具类-他人的工具回头根据实际跳转部分并不是必要使用
  */
+@java.lang.Deprecated
 class StatusBarUtils {
 
     companion object {
@@ -746,12 +747,14 @@ class StatusBarUtils {
          */
         @TargetApi(Build.VERSION_CODES.KITKAT)
         private fun transparentStatusBar(activity: Activity) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !AndroidBug54971Workaround.hasNavigationBar(
-                    activity
-                )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+//                &&
+//                !AndroidBug54971Workaround.hasNavigationBar(
+//                    activity
+//                )
             ) {
                 activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-                activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//                activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
                 activity.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
                 activity.window.statusBarColor = Color.TRANSPARENT
             } else {
@@ -812,4 +815,6 @@ class StatusBarUtils {
             return 0xff shl 24 or (red shl 16) or (green shl 8) or blue
         }
     }
+
+
 }

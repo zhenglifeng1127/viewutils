@@ -1,9 +1,14 @@
 package com.zero.viewutils.base
 
 import android.content.pm.ActivityInfo
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -15,6 +20,7 @@ import com.zero.viewutils.R
 import com.zero.viewutils.ui.LoadingPopup
 import com.zero.viewutils.utils.PopupUtils
 import com.zero.viewutils.utils.extends.getActiveNetworkInfo
+import com.zero.viewutils.utils.extends.getResColor
 import com.zero.viewutils.utils.extends.hideInput
 import com.zero.viewutils.utils.extends.isShouldHideKeyboard
 import com.zero.viewutils.utils.singleton.AppManager
@@ -49,7 +55,7 @@ abstract class BaseActivity<VM : BaseVM> : AppCompatActivity() {
 
         viewModel.initData(intent.extras)
 
-        initStatusBar(R.color.colorPrimaryDark, 0)
+        initStatusBar(R.color.white)
 
         initArgs()
 
@@ -106,23 +112,35 @@ abstract class BaseActivity<VM : BaseVM> : AppCompatActivity() {
     /**
      * 状态栏配置
      */
-    private fun initStatusBar(@ColorRes id: Int, alpha: Int) {
-        if (alpha in 0..255) {
-            if (!isNullTranslucent()) {
-                //开启沉浸式
-                StatusBarUtils.setTranslucentForCoordinatorLayout(
-                    this,
-                    ContextCompat.getColor(this, id),
-                    alpha
-                )
-            } else {
-                //不开启
-                StatusBarUtils.setColor(this, ContextCompat.getColor(this, id), alpha)
+    private fun initStatusBar(@ColorRes id: Int) {
+
+        when {
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.R->{
+                window.setDecorFitsSystemWindows(false)
+                window.statusBarColor = getResColor(id)
             }
-        } else {
-            RuntimeException("The value of the alpha must between 0 and 255")
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && Build.VERSION.SDK_INT < Build.VERSION_CODES.R -> { //5.0及以上
+                val decorView: View = window.decorView
+                val option = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        or View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
+                decorView.systemUiVisibility = option
+                //根据上面设置是否对状态栏单独设置颜色
+                window.statusBarColor = getResColor(id) //设置状态栏背景色
+            }
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT -> { //4.4到5.0
+                val localLayoutParams: WindowManager.LayoutParams = window.attributes
+                localLayoutParams.flags =
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS or localLayoutParams.flags
+            }
+            else -> {
+                L.i("低于4.4的android系统版本不存在沉浸式状态栏")
+            }
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { //android6.0以后可以对状态栏文字颜色和图标进行修改
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
     }
+
 
 
     /**
